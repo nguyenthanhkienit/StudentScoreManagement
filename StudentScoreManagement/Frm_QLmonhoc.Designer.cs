@@ -31,6 +31,12 @@ namespace StudentScoreManagement
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvQLmonhoc = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxTimkiemMH = new System.Windows.Forms.GroupBox();
             this.btnThoattimkiemMH = new System.Windows.Forms.Button();
             this.btnTimkiemMH = new System.Windows.Forms.Button();
@@ -62,12 +68,6 @@ namespace StudentScoreManagement
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonTimkiemMH = new System.Windows.Forms.ToolStripButton();
             this.label11 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLmonhoc)).BeginInit();
             this.groupBoxTimkiemMH.SuspendLayout();
@@ -103,6 +103,53 @@ namespace StudentScoreManagement
             this.dgvQLmonhoc.Size = new System.Drawing.Size(862, 301);
             this.dgvQLmonhoc.TabIndex = 14;
             this.dgvQLmonhoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLmonhoc_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaMon";
+            this.Column1.HeaderText = "Mã môn";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenMon";
+            this.Column2.HeaderText = "Tên môn";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SoTinChi";
+            this.Column3.HeaderText = "Số tín chỉ";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 95;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "MaGV";
+            this.Column4.HeaderText = "Mã GV";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 80;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "HocKy";
+            this.Column5.HeaderText = "Học kỳ";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 80;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "MaKhoa";
+            this.Column6.HeaderText = "Mã khoa";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // groupBoxTimkiemMH
             // 
@@ -213,6 +260,7 @@ namespace StudentScoreManagement
             this.cmbMakhoa.Name = "cmbMakhoa";
             this.cmbMakhoa.Size = new System.Drawing.Size(153, 24);
             this.cmbMakhoa.TabIndex = 30;
+            this.cmbMakhoa.SelectedIndexChanged += new System.EventHandler(this.cmbMakhoa_SelectedIndexChanged);
             // 
             // txtSotinchi
             // 
@@ -301,6 +349,7 @@ namespace StudentScoreManagement
             this.cmbMaGV.Name = "cmbMaGV";
             this.cmbMaGV.Size = new System.Drawing.Size(153, 24);
             this.cmbMaGV.TabIndex = 13;
+            this.cmbMaGV.SelectedIndexChanged += new System.EventHandler(this.cmbMaGV_SelectedIndexChanged);
             // 
             // txtHocky
             // 
@@ -413,53 +462,6 @@ namespace StudentScoreManagement
             this.label11.Size = new System.Drawing.Size(246, 31);
             this.label11.TabIndex = 36;
             this.label11.Text = "Quản Lý Môn Học";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaMon";
-            this.Column1.HeaderText = "Mã môn";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenMon";
-            this.Column2.HeaderText = "Tên môn";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "SoTinChi";
-            this.Column3.HeaderText = "Số tín chỉ";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 95;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "MaGV";
-            this.Column4.HeaderText = "Mã GV";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "HocKy";
-            this.Column5.HeaderText = "Học kỳ";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "MaKhoa";
-            this.Column6.HeaderText = "Mã khoa";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // Frm_QLmonhoc
             // 

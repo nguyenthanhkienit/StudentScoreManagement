@@ -15,6 +15,7 @@ namespace StudentScoreManagement
     public partial class Frm_QLmonhoc : Form
     {
         int flag = -1;
+        string abc1, abc2;
         public Frm_QLmonhoc()
         {
             InitializeComponent();
@@ -187,9 +188,24 @@ namespace StudentScoreManagement
                     command.Parameters.AddWithValue("@mamh", txtMaMH.Text);
                     command.Parameters.AddWithValue("@tenmh", txtTenMH.Text);
                     command.Parameters.AddWithValue("@sotinchi", txtSotinchi.Text);
-                    command.Parameters.AddWithValue("@magv", cmbMaGV.SelectedItem);
+                    if (abc1 == "select1")
+                    {
+                        command.Parameters.AddWithValue("@magv", cmbMaGV.SelectedItem);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@magv", cmbMaGV.Text);
+                    }
+                    
                     command.Parameters.AddWithValue("@hocky", txtHocky.Text);
-                    command.Parameters.AddWithValue("@makhoa", cmbMakhoa.SelectedItem);
+                    if (abc2 == "select2")
+                    {
+                        command.Parameters.AddWithValue("@makhoa", cmbMakhoa.SelectedItem);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@makhoa", cmbMakhoa.Text);
+                    }
                     command.ExecuteNonQuery();
                     connection.Close();
                     MessageBox.Show("Sửa dữ liệu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -270,6 +286,16 @@ namespace StudentScoreManagement
                 e.Handled = true;
                 MessageBox.Show("Vui lòng nhập số.", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cmbMaGV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            abc1 = "select1";
+        }
+
+        private void cmbMakhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            abc2 = "select2";
         }
     }
 }
