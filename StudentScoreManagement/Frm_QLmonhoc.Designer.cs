@@ -203,7 +203,7 @@ namespace StudentScoreManagement
             this.cmbTimkiemMH.FormattingEnabled = true;
             this.cmbTimkiemMH.Items.AddRange(new object[] {
             "Mã môn học",
-            "Tên môc học",
+            "Tên môn học",
             "Mã giáo viên",
             "Học kỳ",
             "Mã khoa"});
